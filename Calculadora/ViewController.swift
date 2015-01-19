@@ -11,13 +11,6 @@ import UIKit
 typealias Operador = (Double, Double) -> (Double)
 
 extension String{
-//    var isDouble: Boolean{
-//        if ( [(self as NSString) isMatchedByRegex:"^(?:|0|[1-9]\\d*)(?:\\.\\d*)?$"] ) {
-//            return true
-//        }
-//        return false
-//    }
-    
     var doubleValue: Double {
         return (self as NSString).doubleValue
     }
