@@ -51,16 +51,16 @@ class ViewController: UIViewController {
         }
         
         //evaluate the RPN
-        return evaluate(&stack)
+        return calculate(&stack)
     }
     
-    func evaluate(inout stack: Array<String>) -> Double{
+    func calculate(inout stack: Array<String>) -> Double{
         let token = stack.pop()!
         var x,y : Double
         x = 0
         if token.doubleValue == 0{
-            y = evaluate(&stack)
-            x = evaluate(&stack)
+            y = calculate(&stack)
+            x = calculate(&stack)
             switch token{
             case "+":
                 x = calculadora(x, op2: y, operador: suma)

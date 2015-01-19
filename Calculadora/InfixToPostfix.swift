@@ -31,6 +31,8 @@ class InfixToPostfix {
                 operatorFound(character,prec: 2)
             case "/":
                 operatorFound(character,prec: 2)
+            case "^":
+                operatorFound(character,prec: 3)
             case "(":
                 stack.push(character)
             case ")":
@@ -58,8 +60,10 @@ class InfixToPostfix {
                 var precTop: Int
                 if topChar == "+" || topChar == "-"{
                     precTop = 1
-                }else{
+                }else if topChar == "*" || topChar == "/"{
                     precTop = 2
+                }else{
+                    precTop = 3
                 }
                 if precTop < prec{
                     stack.push(topChar)

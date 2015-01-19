@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Calculadora/InfixToPostfix.swift"
-            timestampString = "443381507.739612"
+            timestampString = "443390810.320754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "operatorFound(_:prec:)"
             landmarkType = "5">
          </BreakpointContent>
