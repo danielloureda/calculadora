@@ -13,6 +13,8 @@
 		3025C2611A6D64C800D013CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3025C2601A6D64C800D013CF /* Images.xcassets */; };
 		3025C2641A6D64C800D013CF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3025C2621A6D64C800D013CF /* LaunchScreen.xib */; };
 		3025C2701A6D64C900D013CF /* CalculadoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025C26F1A6D64C900D013CF /* CalculadoraTests.swift */; };
+		3025C27C1A6D654C00D013CF /* InfixToPostfix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025C27B1A6D654C00D013CF /* InfixToPostfix.swift */; };
+		3025C2821A6D875700D013CF /* ArrayStackQueueExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025C2811A6D875700D013CF /* ArrayStackQueueExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		3025C2691A6D64C800D013CF /* CalculadoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculadoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3025C26E1A6D64C900D013CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3025C26F1A6D64C900D013CF /* CalculadoraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadoraTests.swift; sourceTree = "<group>"; };
+		3025C27B1A6D654C00D013CF /* InfixToPostfix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfixToPostfix.swift; sourceTree = "<group>"; };
+		3025C2811A6D875700D013CF /* ArrayStackQueueExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayStackQueueExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +81,14 @@
 		3025C2561A6D64C800D013CF /* Calculadora */ = {
 			isa = PBXGroup;
 			children = (
+				3025C2811A6D875700D013CF /* ArrayStackQueueExtensions.swift */,
 				3025C2591A6D64C800D013CF /* AppDelegate.swift */,
 				3025C25B1A6D64C800D013CF /* ViewController.swift */,
 				3025C25D1A6D64C800D013CF /* Main.storyboard */,
 				3025C2601A6D64C800D013CF /* Images.xcassets */,
 				3025C2621A6D64C800D013CF /* LaunchScreen.xib */,
 				3025C2571A6D64C800D013CF /* Supporting Files */,
+				3025C27B1A6D654C00D013CF /* InfixToPostfix.swift */,
 			);
 			path = Calculadora;
 			sourceTree = "<group>";
@@ -213,7 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3025C25C1A6D64C800D013CF /* ViewController.swift in Sources */,
+				3025C2821A6D875700D013CF /* ArrayStackQueueExtensions.swift in Sources */,
 				3025C25A1A6D64C800D013CF /* AppDelegate.swift in Sources */,
+				3025C27C1A6D654C00D013CF /* InfixToPostfix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

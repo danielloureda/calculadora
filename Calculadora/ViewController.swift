@@ -8,18 +8,105 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+typealias Operador = (Double, Double) -> (Double)
 
+extension String{
+//    var isDouble: Boolean{
+//        if ( [(self as NSString) isMatchedByRegex:"^(?:|0|[1-9]\\d*)(?:\\.\\d*)?$"] ) {
+//            return true
+//        }
+//        return false
+//    }
+    
+    var doubleValue: Double {
+        return (self as NSString).doubleValue
+    }
+}
+
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var txInput: UITextField!
+    @IBOutlet weak var lbResult: UILabel!
+
+    @IBAction func solvePressed() {
+        //well formed expression is considered
+        let input = txInput.text!
+        let result = supercalculadora(input)
+        lbResult.text = result.description
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    func supercalculadora(input:String) -> Double{
+        //convert infix notation to postfix notation (RPN)
+        var itp = InfixToPostfix(inputString: input)
+        let output = itp.parse()
+        
+        //split the string in order to get numbers and operators
+        let ops = output.componentsSeparatedByString(" ")
+        
+        //put expression into a stack to evaluate them
+        var stack = Array<String>()
+        for string in ops{
+            stack.push(string)
+        }
+        
+        //evaluate the RPN
+        return evaluate(&stack)
+    }
+    
+    func evaluate(inout stack: Array<String>) -> Double{
+        let token = stack.pop()!
+        var x,y : Double
+        x = 0
+        if token.doubleValue == 0{
+            y = evaluate(&stack)
+            x = evaluate(&stack)
+            switch token{
+            case "+":
+                x = calculadora(x, op2: y, operador: suma)
+            case "-":
+                x = calculadora(x, op2: y, operador: resta)
+            case "*":
+                x = calculadora(x, op2: y, operador: multiplicacion)
+            case "/":
+                x = calculadora(x, op2: y, operador: division)
+            case "^":
+                x = calculadora(x, op2: y, operador: potencia)
+            default:()
+            }
+        }else{
+            x = token.doubleValue
+        }
+        return x
+    }
+    
+    func calculadora(op1:Double, op2:Double, operador: Operador) -> Double{
+        return operador(op1, op2)
+    }
 
+    func suma(op1: Double, op2: Double) -> Double{
+        return op1+op2
+    }
+    
+    func resta(op1: Double, op2: Double) -> Double{
+        return op1-op2
+    }
+    func multiplicacion(op1: Double, op2: Double) -> Double{
+        return op1*op2
+    }
+    
+    func division(op1: Double, op2: Double) -> Double{
+        return op1/op2
+    }
+    func potencia(op1: Double, op2: Double) -> Double{
+        return pow(op1, op2)
+    }
 }
 
